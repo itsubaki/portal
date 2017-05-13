@@ -17,6 +17,11 @@ defmodule Portal do
 
     portal
   end
+
+  def shoot(color) do
+    Supervisor.start_child(Portal.Supervisor, [color])
+  end
+
 end
 
 defimpl Inspect, for: Portal do
